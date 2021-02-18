@@ -24,7 +24,20 @@ endif
 call plug#begin('~/.vim/plugged')
 Plug 'bluz71/vim-nightfly-guicolors'
 Plug 'skbolton/embark'
+Plug 'dense-analysis/ale'
+Plug 'sheerun/vim-polyglot'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 call plug#end()
 
+" Keybindings
+
+nmap [f <Plug>(ale_fix)
+nmap <silent> [c <Plug>(ale_previous_wrap)
+nmap <silent> ]c <Plug>(ale_next_wrap)
+inoremap <S-Tab> <C-d>
+nnoremap <C-p> :Files<CR>
+nnoremap <Leader>b :Buffers<CR>
+nnoremap <Leader>h :History<CR>
 colorscheme embark
 let g:lightline = { 'colorscheme': 'embark' }
